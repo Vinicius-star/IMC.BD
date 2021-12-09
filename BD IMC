@@ -1,0 +1,24 @@
+#APLICAÇÃO DO BANCO DE DADOS
+from sqlalchemy import *
+db = create_engine('splite:\\\CALCIMC.db')
+metadata = MetaData(db)
+metadata.blind.echo = True
+CALCIMC_table = Table ('CALCIMC', metadata,
+
+                    Column('CALCIMC ID', Interger, primary_key=True),
+                    Column('ALTURA',float(100)))
+                    Column('PESO', float(100)))
+#PRINCIPAL
+CALCIMC_table.create()
+paciente = str(input("Informe o nome do paciente: "))
+endereco = str(input("Informe o endereço: "))
+altura = float(input("Informe sua altura: "))
+peso = float(input("Informe seu peso: "))
+IMC = float
+
+def calcular_imc():
+  IMC = peso/(altura**2)
+
+print("O IMC da pessoa é: {:.1F}". format(calcular_imc))
+s = prog_table select()
+r = s.execute()
